@@ -96,13 +96,13 @@ const Mabar = () => {
             {/* Queue Info */}
             <div className="space-y-8">
               <div className="glass-panel p-8">
-                <h2 className="text-2xl font-fantasy font-bold mb-6 text-accent">
+                <h2 className="text-2xl font-fantasy font-bold mb-6 text-gold text-glow">
                   Queue Information
                 </h2>
                 
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <Users className="w-8 h-8 text-peach" />
+                    <Users className="w-8 h-8 text-orange" />
                     <div>
                       <h3 className="font-semibold">Current Queue</h3>
                       <p className="text-sm text-muted-foreground">12 players waiting</p>
@@ -118,7 +118,7 @@ const Mabar = () => {
                   </div>
                   
                   <div className="flex items-center space-x-4">
-                    <GamepadIcon className="w-8 h-8 text-peach" />
+                    <GamepadIcon className="w-8 h-8 text-purple" />
                     <div>
                       <h3 className="font-semibold">Most Popular Games</h3>
                       <p className="text-sm text-muted-foreground">Mobile Legends, PUBG Mobile</p>
@@ -143,7 +143,7 @@ const Mabar = () => {
 
             {/* Queue Form */}
             <div className="glass-panel p-8">
-              <h2 className="text-2xl font-fantasy font-bold mb-6 text-peach">
+              <h2 className="text-2xl font-fantasy font-bold mb-6 text-gold text-glow">
                 Join the Queue
               </h2>
               
@@ -213,7 +213,7 @@ const Mabar = () => {
 
                 <Button 
                   type="submit" 
-                  className="btn-peach w-full"
+                  className="btn-celestial w-full"
                   disabled={isSubmitting || !formData.nickname || !formData.gameTitle || !formData.preferredTime}
                 >
                   {isSubmitting ? (

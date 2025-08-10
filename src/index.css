@@ -8,54 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Fantasy Color Palette */
-    --background: 219 15% 16%; /* Deep Blue #2a2d37 */
-    --foreground: 210 30% 92%;
+    /* Genshin Impact Inspired Color Palette */
+    --background: 212 48% 12%; /* Deep Midnight Blue #0f1a2b */
+    --foreground: 45 86% 85%;
 
-    --card: 219 15% 16% / 0.8;
-    --card-foreground: 210 30% 92%;
+    --card: 212 48% 12% / 0.8;
+    --card-foreground: 45 86% 85%;
 
-    --popover: 219 15% 16% / 0.95;
-    --popover-foreground: 210 30% 92%;
+    --popover: 212 48% 12% / 0.95;
+    --popover-foreground: 45 86% 85%;
 
-    --primary: 219 15% 16%; /* Deep Blue */
-    --primary-foreground: 210 30% 92%;
+    --primary: 212 48% 12%; /* Deep Midnight Blue */
+    --primary-foreground: 45 86% 85%;
 
-    --secondary: 210 25% 30%; /* Grayish Blue #3e4d60 */
-    --secondary-foreground: 210 30% 92%;
+    --secondary: 212 40% 20%; /* Darker variant */
+    --secondary-foreground: 45 86% 85%;
 
-    --muted: 210 25% 30% / 0.6;
-    --muted-foreground: 210 15% 70%;
+    --muted: 212 40% 20% / 0.6;
+    --muted-foreground: 45 60% 70%;
 
-    --accent: 193 71% 73%; /* Pastel Blue #a4d5e5 */
-    --accent-foreground: 219 15% 16%;
+    --accent: 177 73% 71%; /* Light Aqua Glow #7fe7e2 */
+    --accent-foreground: 212 48% 12%;
 
-    --peach: 35 87% 70%; /* Warm Peach #f7b769 */
-    --peach-foreground: 219 15% 16%;
+    --gold: 45 86% 73%; /* Celestial Gold #f5d47a */
+    --gold-foreground: 212 48% 12%;
+
+    --orange: 32 100% 72%; /* Pastel Orange #ffbb70 */
+    --orange-foreground: 212 48% 12%;
+
+    --purple: 250 100% 76%; /* Arcane Purple #a38bff */
+    --purple-foreground: 212 48% 12%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 45 86% 85%;
 
-    --border: 210 25% 30% / 0.3;
-    --input: 210 25% 30% / 0.5;
-    --ring: 193 71% 73%;
+    --border: 177 73% 71% / 0.2;
+    --input: 212 40% 20% / 0.5;
+    --ring: 45 86% 73%;
 
     --radius: 0.75rem;
 
-    /* Fantasy Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(219 15% 16%), hsl(210 25% 30%));
-    --gradient-accent: linear-gradient(135deg, hsl(193 71% 73%), hsl(35 87% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(219 15% 16% / 0.9), hsl(210 25% 30% / 0.8));
-    --gradient-glow: radial-gradient(circle, hsl(193 71% 73% / 0.3), transparent 70%);
+    /* Genshin Impact Inspired Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(212 48% 12%), hsl(212 40% 20%));
+    --gradient-celestial: linear-gradient(135deg, hsl(45 86% 73%), hsl(32 100% 72%));
+    --gradient-aqua: linear-gradient(135deg, hsl(177 73% 71%), hsl(250 100% 76%));
+    --gradient-hero: linear-gradient(135deg, hsl(212 48% 12% / 0.9), hsl(212 40% 20% / 0.8));
+    --gradient-magical: radial-gradient(circle, hsl(177 73% 71% / 0.3), transparent 70%);
     
-    /* Magical Effects */
-    --shadow-glow: 0 0 30px hsl(193 71% 73% / 0.4);
-    --shadow-peach-glow: 0 0 25px hsl(35 87% 70% / 0.4);
-    --shadow-elegant: 0 10px 40px -10px hsl(219 15% 16% / 0.6);
+    /* Magical Glow Effects */
+    --shadow-aqua-glow: 0 0 30px hsl(177 73% 71% / 0.5);
+    --shadow-gold-glow: 0 0 25px hsl(45 86% 73% / 0.5);
+    --shadow-orange-glow: 0 0 25px hsl(32 100% 72% / 0.5);
+    --shadow-purple-glow: 0 0 25px hsl(250 100% 76% / 0.5);
+    --shadow-elegant: 0 10px 40px -10px hsl(212 48% 12% / 0.6);
 
     /* Typography */
-    --font-fantasy: 'Cinzel', serif;
-    --font-body: 'Poppins', sans-serif;
+    --font-fantasy: 'Cinzel Decorative', serif;
+    --font-body: 'Lato', sans-serif;
 
     /* Animations */
     --transition-magical: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -126,53 +135,67 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-body;
     background: var(--gradient-primary);
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-fantasy);
+    text-shadow: 0 0 20px hsl(var(--gold) / 0.3);
   }
 }
 
 @layer components {
-  /* Magical Button Variants */
+  /* Genshin Impact Inspired Button Variants */
   .btn-hero {
-    @apply bg-gradient-to-r from-accent to-peach text-peach-foreground font-semibold px-8 py-4 rounded-lg;
-    @apply hover:shadow-[var(--shadow-glow)] transition-[var(--transition-magical)];
+    @apply bg-gradient-to-r from-gold to-orange text-gold-foreground font-semibold px-8 py-4 rounded-xl;
+    @apply hover:shadow-[var(--shadow-gold-glow)] transition-[var(--transition-magical)];
     @apply hover:scale-105 active:scale-95;
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--orange)));
+    border: 2px solid hsl(var(--gold) / 0.3);
   }
 
-  .btn-peach {
-    @apply bg-peach text-peach-foreground font-semibold px-6 py-3 rounded-lg;
-    @apply hover:shadow-[var(--shadow-peach-glow)] transition-[var(--transition-glow)];
+  .btn-celestial {
+    @apply bg-gold text-gold-foreground font-semibold px-6 py-3 rounded-xl;
+    @apply hover:shadow-[var(--shadow-gold-glow)] transition-[var(--transition-glow)];
     @apply hover:scale-105 active:scale-95;
+    border: 2px solid hsl(var(--gold) / 0.3);
   }
 
   .btn-magical {
-    @apply bg-accent/20 border border-accent text-accent backdrop-blur-sm;
+    @apply bg-accent/20 border-2 border-accent text-accent backdrop-blur-sm rounded-xl;
     @apply hover:bg-accent hover:text-accent-foreground transition-[var(--transition-magical)];
-    @apply hover:shadow-[var(--shadow-glow)] hover:scale-105 active:scale-95;
+    @apply hover:shadow-[var(--shadow-aqua-glow)] hover:scale-105 active:scale-95;
   }
 
-  /* Glass Morphism Panels */
+  /* Genshin Impact Inspired Glass Panels */
   .glass-panel {
-    @apply bg-card/80 backdrop-blur-lg border border-border/30 rounded-xl;
+    @apply bg-card/80 backdrop-blur-lg border-2 border-accent/20 rounded-xl;
     @apply shadow-[var(--shadow-elegant)];
+    background: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--secondary) / 0.6));
+    transition: all 0.3s ease;
+  }
+
+  .glass-panel:hover {
+    @apply border-accent/40 shadow-[var(--shadow-aqua-glow)];
+    transform: translateY(-5px) scale(1.02);
   }
 
   /* Magical Text Effects */
   .text-glow {
-    text-shadow: 0 0 20px hsl(var(--accent) / 0.6);
+    text-shadow: 0 0 20px hsl(var(--gold) / 0.6), 0 0 40px hsl(var(--accent) / 0.3);
   }
 
   .text-hero {
     @apply text-6xl md:text-8xl font-bold text-glow;
-    background: var(--gradient-accent);
+    background: var(--gradient-celestial);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: pulse-glow 3s ease-in-out infinite;
   }
 
-  /* Particle Animation */
+  /* Enhanced Magical Particle Animation */
   .particles {
     position: fixed;
     top: 0;
@@ -187,30 +210,78 @@ All colors MUST be HSL.
     position: absolute;
     background: hsl(var(--accent));
     border-radius: 50%;
-    opacity: 0.6;
-    animation: float 6s ease-in-out infinite;
+    opacity: 0.7;
+    animation: float 8s ease-in-out infinite;
+    box-shadow: 0 0 10px currentColor;
   }
 
   .particle:nth-child(odd) {
     animation-delay: -2s;
-    background: hsl(var(--peach));
+    background: hsl(var(--gold));
+  }
+
+  .particle:nth-child(3n) {
+    animation-delay: -4s;
+    background: hsl(var(--purple));
+    animation-duration: 10s;
   }
 
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.6; }
-    50% { transform: translateY(-100px) rotate(180deg); opacity: 0.8; }
-    90% { opacity: 0.6; }
+    10% { opacity: 0.7; }
+    50% { transform: translateY(-120px) rotate(180deg); opacity: 1; }
+    90% { opacity: 0.7; }
   }
 
-  /* Navigation Styles */
+  @keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 0 20px hsl(var(--gold) / 0.6), 0 0 40px hsl(var(--accent) / 0.3); }
+    50% { text-shadow: 0 0 30px hsl(var(--gold) / 0.8), 0 0 60px hsl(var(--accent) / 0.5); }
+  }
+
+  /* Enhanced Navigation Styles */
   .nav-glass {
-    @apply bg-background/10 backdrop-blur-md border-b border-border/20;
+    @apply bg-background/10 backdrop-blur-md border-b border-accent/20;
+    transition: all 0.3s ease;
   }
 
-  /* Hero Section */
+  .nav-glass.scrolled {
+    @apply bg-background/95 border-accent/40;
+    box-shadow: 0 4px 20px hsl(var(--background) / 0.8);
+  }
+
+  /* Enhanced Hero Section */
   .hero-bg {
     background: var(--gradient-hero);
     background-attachment: fixed;
+    position: relative;
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-magical);
+    pointer-events: none;
+  }
+
+  /* Active Navigation Link */
+  .nav-active {
+    position: relative;
+    color: hsl(var(--gold));
+  }
+
+  .nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-celestial);
+    border-radius: 1px;
+    box-shadow: 0 0 10px hsl(var(--gold) / 0.5);
   }
 }

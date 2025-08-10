@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'fantasy': ['Cinzel', 'serif'],
-				'body': ['Poppins', 'sans-serif'],
+				'fantasy': ['Cinzel Decorative', 'serif'],
+				'body': ['Lato', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -48,9 +48,17 @@ export default {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
-				peach: {
-					DEFAULT: 'hsl(var(--peach))',
-					foreground: 'hsl(var(--peach-foreground))'
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					foreground: 'hsl(var(--gold-foreground))'
+				},
+				orange: {
+					DEFAULT: 'hsl(var(--orange))',
+					foreground: 'hsl(var(--orange-foreground))'
+				},
+				purple: {
+					DEFAULT: 'hsl(var(--purple))',
+					foreground: 'hsl(var(--purple-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -73,9 +81,10 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-celestial': 'var(--gradient-celestial)',
+				'gradient-aqua': 'var(--gradient-aqua)',
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-glow': 'var(--gradient-glow)',
+				'gradient-magical': 'var(--gradient-magical)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -22,8 +22,8 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-accent"></div>
-            <span className="font-fantasy font-bold text-xl text-accent">
+            <div className="w-8 h-8 rounded-full bg-gradient-celestial shadow-[var(--shadow-gold-glow)]"></div>
+            <span className="font-fantasy font-bold text-xl text-gold">
               Bang Isd
             </span>
           </Link>
@@ -34,10 +34,10 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-medium transition-all duration-300 hover:text-accent ${
+                className={`font-medium transition-all duration-300 hover:text-gold ${
                   isActive(item.path)
-                    ? "text-accent text-glow"
-                    : "text-muted-foreground"
+                    ? "nav-active text-glow"
+                    : "text-muted-foreground hover:text-gold"
                 }`}
               >
                 {item.label}
@@ -66,8 +66,8 @@ const Navigation = () => {
                   to={item.path}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
                     isActive(item.path)
-                      ? "text-accent bg-accent/10"
-                      : "text-muted-foreground hover:text-accent hover:bg-accent/5"
+                      ? "text-gold bg-gold/10"
+                      : "text-muted-foreground hover:text-gold hover:bg-gold/5"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

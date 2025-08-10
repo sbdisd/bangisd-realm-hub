@@ -26,7 +26,7 @@ const Home = () => {
             <img
               src={bangIsdAvatar}
               alt="Bang Isd Avatar"
-              className="w-32 h-32 md:w-48 md:h-48 rounded-full mx-auto shadow-[var(--shadow-glow)] border-4 border-accent/30 hover:scale-105 transition-transform duration-500"
+              className="w-32 h-32 md:w-48 md:h-48 rounded-full mx-auto shadow-[var(--shadow-aqua-glow)] border-4 border-gold/30 hover:scale-105 transition-transform duration-500"
             />
           </div>
 
@@ -36,7 +36,7 @@ const Home = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-accent mb-12 font-medium">
+          <p className="text-xl md:text-2xl text-gold mb-12 font-medium text-glow">
             Streaming • Mabar • Top-Up
           </p>
 
@@ -67,8 +67,8 @@ const Home = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="w-6 h-10 border-2 border-accent rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-pulse"></div>
+          <div className="w-6 h-10 border-2 border-gold rounded-full flex justify-center shadow-[var(--shadow-gold-glow)]">
+            <div className="w-1 h-3 bg-gold rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
@@ -81,7 +81,7 @@ const Home = () => {
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="glass-panel p-8 text-center hover:scale-105 transition-transform duration-300">
+            <div className="glass-panel p-8 text-center transition-all duration-300">
               <Users className="w-16 h-16 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-fantasy font-semibold mb-4">Connect & Stream</h3>
               <p className="text-muted-foreground">
@@ -89,16 +89,16 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="glass-panel p-8 text-center hover:scale-105 transition-transform duration-300">
-              <GamepadIcon className="w-16 h-16 text-peach mx-auto mb-4" />
+            <div className="glass-panel p-8 text-center transition-all duration-300">
+              <GamepadIcon className="w-16 h-16 text-orange mx-auto mb-4" />
               <h3 className="text-xl font-fantasy font-semibold mb-4">Mabar Together</h3>
               <p className="text-muted-foreground">
                 Join the queue for collaborative gaming sessions and make new friends
               </p>
             </div>
             
-            <div className="glass-panel p-8 text-center hover:scale-105 transition-transform duration-300">
-              <CreditCard className="w-16 h-16 text-accent mx-auto mb-4" />
+            <div className="glass-panel p-8 text-center transition-all duration-300">
+              <CreditCard className="w-16 h-16 text-purple mx-auto mb-4" />
               <h3 className="text-xl font-fantasy font-semibold mb-4">Easy Top-Up</h3>
               <p className="text-muted-foreground">
                 Quick and secure game currency top-up services for your favorite games
