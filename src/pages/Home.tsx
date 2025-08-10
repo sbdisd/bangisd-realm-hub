@@ -43,21 +43,21 @@ const Home = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center max-w-4xl mx-auto">
             <Link to="/social" className="w-full md:w-auto">
-             <button className="btn-custom">
+             <Button className="btn-custom">
                 <Users className="mr-2 h-5 w-5" />
                 Social Media
               </Button>
             </Link>
             
             <Link to="/mabar" className="w-full md:w-auto">
-              <button className="btn-custom">
+              <Button className="btn-custom">
                 <GamepadIcon className="mr-2 h-5 w-5" />
                 Mabar Queue
               </Button>
             </Link>
             
             <Link to="/topup" className="w-full md:w-auto">
-              <button className="btn-custom">
+              <Button className="btn-custom">
                 <CreditCard className="mr-2 h-5 w-5" />
                 Game Top-Up
               </Button>
