@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Bang Isd Fantasy Design System - Inspired by Genshin Impact 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Fantasy Color Palette */
+    --background: 219 15% 16%; /* Deep Blue #2a2d37 */
+    --foreground: 210 30% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 219 15% 16% / 0.8;
+    --card-foreground: 210 30% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 219 15% 16% / 0.95;
+    --popover-foreground: 210 30% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 219 15% 16%; /* Deep Blue */
+    --primary-foreground: 210 30% 92%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 25% 30%; /* Grayish Blue #3e4d60 */
+    --secondary-foreground: 210 30% 92%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 25% 30% / 0.6;
+    --muted-foreground: 210 15% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 193 71% 73%; /* Pastel Blue #a4d5e5 */
+    --accent-foreground: 219 15% 16%;
+
+    --peach: 35 87% 70%; /* Warm Peach #f7b769 */
+    --peach-foreground: 219 15% 16%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 25% 30% / 0.3;
+    --input: 210 25% 30% / 0.5;
+    --ring: 193 71% 73%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Fantasy Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(219 15% 16%), hsl(210 25% 30%));
+    --gradient-accent: linear-gradient(135deg, hsl(193 71% 73%), hsl(35 87% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(219 15% 16% / 0.9), hsl(210 25% 30% / 0.8));
+    --gradient-glow: radial-gradient(circle, hsl(193 71% 73% / 0.3), transparent 70%);
+    
+    /* Magical Effects */
+    --shadow-glow: 0 0 30px hsl(193 71% 73% / 0.4);
+    --shadow-peach-glow: 0 0 25px hsl(35 87% 70% / 0.4);
+    --shadow-elegant: 0 10px 40px -10px hsl(219 15% 16% / 0.6);
+
+    /* Typography */
+    --font-fantasy: 'Cinzel', serif;
+    --font-body: 'Poppins', sans-serif;
+
+    /* Animations */
+    --transition-magical: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-glow: all 0.3s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +123,94 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fantasy);
+  }
+}
+
+@layer components {
+  /* Magical Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-accent to-peach text-peach-foreground font-semibold px-8 py-4 rounded-lg;
+    @apply hover:shadow-[var(--shadow-glow)] transition-[var(--transition-magical)];
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  .btn-peach {
+    @apply bg-peach text-peach-foreground font-semibold px-6 py-3 rounded-lg;
+    @apply hover:shadow-[var(--shadow-peach-glow)] transition-[var(--transition-glow)];
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  .btn-magical {
+    @apply bg-accent/20 border border-accent text-accent backdrop-blur-sm;
+    @apply hover:bg-accent hover:text-accent-foreground transition-[var(--transition-magical)];
+    @apply hover:shadow-[var(--shadow-glow)] hover:scale-105 active:scale-95;
+  }
+
+  /* Glass Morphism Panels */
+  .glass-panel {
+    @apply bg-card/80 backdrop-blur-lg border border-border/30 rounded-xl;
+    @apply shadow-[var(--shadow-elegant)];
+  }
+
+  /* Magical Text Effects */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--accent) / 0.6);
+  }
+
+  .text-hero {
+    @apply text-6xl md:text-8xl font-bold text-glow;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Particle Animation */
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .particle {
+    position: absolute;
+    background: hsl(var(--accent));
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .particle:nth-child(odd) {
+    animation-delay: -2s;
+    background: hsl(var(--peach));
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    50% { transform: translateY(-100px) rotate(180deg); opacity: 0.8; }
+    90% { opacity: 0.6; }
+  }
+
+  /* Navigation Styles */
+  .nav-glass {
+    @apply bg-background/10 backdrop-blur-md border-b border-border/20;
+  }
+
+  /* Hero Section */
+  .hero-bg {
+    background: var(--gradient-hero);
+    background-attachment: fixed;
   }
 }
