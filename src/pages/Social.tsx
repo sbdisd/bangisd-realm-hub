@@ -16,7 +16,7 @@ const Social = () => {
       name: "Discord",
       icon: Users,
       color: "text-indigo-400",
-      url: "#",
+      url: "https://discord.com/invite/abxMbqNH6w",
       description: "Join our community and chat with me live!"
     }
   ];
