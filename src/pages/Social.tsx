@@ -9,12 +9,12 @@ const Social = () => {
       name: "YouTube",
       icon: Youtube,
       color: "text-red-500",
-      url: "https://www.youtube.com/@bangisd",
+      url: "#",
       description: "Gaming content & tutorials"
     },
     {
       name: "Discord",
-      icon: Users, // Mengganti ikon Discord dengan Users
+      icon: Users,
       color: "text-indigo-400",
       url: "#",
       description: "Join our community and chat with me live!"
@@ -52,21 +52,23 @@ const Social = () => {
         </div>
 
         {/* Social Links Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {socialLinks.map((social) => {
-            const IconComponent = social.icon;
-            return (
-              <a
-                key={social.name}
-                href={social.url}
-                className="glass-panel p-6 text-center transition-all duration-300 group"
-              >
-                <IconComponent className={`w-12 h-12 mx-auto mb-4 ${social.color} group-hover:scale-110 transition-transform`} />
-                <h3 className="font-fantasy font-semibold text-lg mb-2">{social.name}</h3>
-                <p className="text-sm text-muted-foreground">{social.description}</p>
-              </a>
-            );
-          })}
+        <div className="flex justify-center"> {/* Baris yang ditambahkan untuk menengahkan konten */}
+          <div className="grid md:grid-cols-2 max-w-2xl gap-6 mb-16"> {/* Grid diperbarui untuk 2 kolom */}
+            {socialLinks.map((social) => {
+              const IconComponent = social.icon;
+              return (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  className="glass-panel p-6 text-center transition-all duration-300 group"
+                >
+                  <IconComponent className={`w-12 h-12 mx-auto mb-4 ${social.color} group-hover:scale-110 transition-transform`} />
+                  <h3 className="font-fantasy font-semibold text-lg mb-2">{social.name}</h3>
+                  <p className="text-sm text-muted-foreground">{social.description}</p>
+                </a>
+              );
+            })}
+          </div>
         </div>
 
         {/* Featured Content Section */}
