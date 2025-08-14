@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import ParticleEffect from "@/components/ParticleEffect";
 import bangIsdAvatar from "@/assets/bang-isd-avatar.jpg";
-import { Youtube, ExternalLink, Discord } from "lucide-react";
+import { Youtube, ExternalLink, Users } from "lucide-react";
 
 const Social = () => {
   const socialLinks = [
@@ -9,12 +9,12 @@ const Social = () => {
       name: "YouTube",
       icon: Youtube,
       color: "text-red-500",
-      url: "#",
+      url: "https://www.youtube.com/@bangisd",
       description: "Gaming content & tutorials"
     },
     {
       name: "Discord",
-      icon: Discord,
+      icon: Users, // Mengganti ikon Discord dengan Users
       color: "text-indigo-400",
       url: "#",
       description: "Join our community and chat with me live!"
