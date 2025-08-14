@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import ParticleEffect from "@/components/ParticleEffect";
 import bangIsdAvatar from "@/assets/bang-isd-avatar.jpg";
-import { Youtube, Instagram, Twitter, Twitch, ExternalLink } from "lucide-react";
+import { Youtube, ExternalLink, Discord } from "lucide-react";
 
 const Social = () => {
   const socialLinks = [
@@ -13,25 +13,11 @@ const Social = () => {
       description: "Gaming content & tutorials"
     },
     {
-      name: "Instagram",
-      icon: Instagram,
-      color: "text-pink-500",
+      name: "Discord",
+      icon: Discord,
+      color: "text-indigo-400",
       url: "#",
-      description: "Behind the scenes & daily updates"
-    },
-    {
-      name: "Twitter",
-      icon: Twitter,
-      color: "text-blue-400",
-      url: "#",
-      description: "Gaming news & quick updates"
-    },
-    {
-      name: "Twitch",
-      icon: Twitch,
-      color: "text-purple-500",
-      url: "#",
-      description: "Live streaming & interactive gaming"
+      description: "Join our community and chat with me live!"
     }
   ];
 
@@ -104,7 +90,6 @@ const Social = () => {
             {/* Instagram Feed Placeholder */}
             <div className="bg-secondary/20 rounded-lg aspect-video flex items-center justify-center border-2 border-accent/20 glass-panel">
               <div className="text-center">
-                <Instagram className="w-16 h-16 text-pink-500 mx-auto mb-4" />
                 <p className="text-muted-foreground">Instagram Feed</p>
                 <p className="text-sm text-muted-foreground mt-2">
                   Connect your Instagram to show latest posts
