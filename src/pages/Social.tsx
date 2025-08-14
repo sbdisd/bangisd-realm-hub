@@ -9,7 +9,7 @@ const Social = () => {
       name: "YouTube",
       icon: Youtube,
       color: "text-red-500",
-      url: "#",
+      url: "https://www.youtube.com/@bangisd",
       description: "Gaming content & tutorials"
     },
     {
