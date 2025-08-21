@@ -9,6 +9,7 @@ import Social from "./pages/Social";
 import Mabar from "./pages/Mabar";
 import TopUp from "./pages/TopUp";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/social" element={<Social />} />
           <Route path="/mabar" element={<Mabar />} />
           <Route path="/topup" element={<TopUp />} />
+          <Route path="/login" element={<Login />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
