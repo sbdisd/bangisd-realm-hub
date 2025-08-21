@@ -13,7 +13,7 @@ const Home = () => {
 
   // Ganti dengan API Key dan Channel ID Anda
   const YOUTUBE_API_KEY = "AIzaSyDn8rDHnqMjX-9mo-lkCEvwLewL2v7Sfa4";
-  const YOUTUBE_CHANNEL_ID = "GANTI_DENGAN_CHANNEL_ID_ANDA"; // Contoh: UC_your_channel_id
+  const YOUTUBE_CHANNEL_ID = "UC1JoEzzcJG48seclqxIgoqw"; // Contoh: UC_your_channel_id
 
   useEffect(() => {
     const getLatestVideo = async () => {
