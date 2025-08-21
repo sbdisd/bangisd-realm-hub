@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import ParticleEffect from "@/components/ParticleEffect";
 import heroBg from "@/assets/hero-bg.jpg";
 import bangIsdAvatar from "@/assets/bang-isd-avatar.jpg";
-import { Users, GamepadIcon, CreditCard } from "lucide-react";
+import { Users, GamepadIcon, CreditCard, MessageCircle } from "lucide-react";
 
 const Home = () => {
   return (
@@ -46,6 +46,12 @@ const Home = () => {
              <Button className="btn-custom">
                 <Users className="mr-2 h-5 w-5" />
                 Social Media
+              </Button>
+            </Link>
+            <Link to="https://discord.com/invite/abxMbqNH6w" className="w-full md:w-auto">
+             <Button className="btn-custom">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Join Discord
               </Button>
             </Link>
             
