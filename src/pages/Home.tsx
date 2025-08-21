@@ -2,10 +2,50 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ParticleEffect from "@/components/ParticleEffect";
 import heroBg from "@/assets/hero-bg.jpg";
-import bangIsdAvatar from "@/assets/bang-isd-avatar.jpg";
-import { Users, GamepadIcon, CreditCard, MessageCircle } from "lucide-react";
+import bangIsdAvatar from "@/assets/bang-is-d-avatar.jpg";
+import { Users, GamepadIcon, CreditCard, MessageCircle, Youtube } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [latestVideoId, setLatestVideoId] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Ganti dengan API Key dan Channel ID Anda
+  const YOUTUBE_API_KEY = "GANTI_DENGAN_API_KEY_ANDA";
+  const YOUTUBE_CHANNEL_ID = "GANTI_DENGAN_CHANNEL_ID_ANDA"; // Contoh: UC_your_channel_id
+
+  useEffect(() => {
+    const getLatestVideo = async () => {
+      const UPLOADS_PLAYLIST_ID = YOUTUBE_CHANNEL_ID.replace('UC', 'UU');
+
+      try {
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${UPLOADS_PLAYLIST_ID}&maxResults=1&key=${YOUTUBE_API_KEY}`);
+        if (!response.ok) {
+          throw new Error('Gagal mengambil data dari YouTube API. Pastikan API Key benar.');
+        }
+        const data = await response.json();
+        if (data.items && data.items.length > 0) {
+          setLatestVideoId(data.items[0].snippet.resourceId.videoId);
+        } else {
+          setError("Tidak ada video yang ditemukan di channel ini.");
+        }
+      } catch (err: any) {
+        setError(err.message);
+        console.error("Error fetching latest video:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (YOUTUBE_API_KEY !== "GANTI_DENGAN_API_KEY_ANDA" && YOUTUBE_CHANNEL_ID !== "GANTI_DENGAN_CHANNEL_ID_ANDA") {
+      getLatestVideo();
+    } else {
+      setIsLoading(false);
+      setError("Harap konfigurasikan YouTube API Key dan Channel ID di file Home.tsx.");
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <ParticleEffect />
@@ -109,6 +149,42 @@ const Home = () => {
               <p className="text-muted-foreground">
                 Quick and secure game currency top-up services for your favorite games
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Video Section */}
+      <section className="py-20 px-4 bg-background/50">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-fantasy text-center mb-16 text-glow">
+            Latest Video
+          </h2>
+          <div className="flex justify-center">
+            <div className="w-full max-w-2xl aspect-video bg-secondary/20 rounded-lg border-2 border-accent/20 glass-panel overflow-hidden">
+              {isLoading ? (
+                <div className="w-full h-full flex items-center justify-center">
+                  <p className="text-muted-foreground">Memuat video terbaru...</p>
+                </div>
+              ) : error ? (
+                <div className="w-full h-full flex items-center justify-center p-4">
+                  <p className="text-destructive text-center">{error}</p>
+                </div>
+              ) : latestVideoId ? (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${latestVideoId}`}
+                  title="Latest YouTube video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <p className="text-muted-foreground">Video tidak ditemukan.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
