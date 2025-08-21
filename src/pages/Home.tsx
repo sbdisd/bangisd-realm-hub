@@ -12,7 +12,7 @@ const Home = () => {
   const [error, setError] = useState<string | null>(null);
 
   // Ganti dengan API Key dan Channel ID Anda
-  const YOUTUBE_API_KEY = "GANTI_DENGAN_API_KEY_ANDA";
+  const YOUTUBE_API_KEY = "AIzaSyDn8rDHnqMjX-9mo-lkCEvwLewL2v7Sfa4";
   const YOUTUBE_CHANNEL_ID = "GANTI_DENGAN_CHANNEL_ID_ANDA"; // Contoh: UC_your_channel_id
 
   useEffect(() => {
